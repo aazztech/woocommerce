@@ -712,6 +712,7 @@ class WC_Admin_Post_Types {
 	 * @param WP_Post $post Current post object.
 	 */
 	public function edit_form_after_title( $post ) {
+	    global $post;
 		if ( 'shop_coupon' === $post->post_type ) {
 			?>
 			<textarea id="woocommerce-coupon-description" name="excerpt" cols="5" rows="2" placeholder="<?php esc_attr_e( 'Description (optional)', 'woocommerce' ); ?>"><?php echo $post->post_excerpt; // WPCS: XSS ok. ?></textarea>
